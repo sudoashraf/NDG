@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ndg"
+version = "1.0.0"
+description = "Network Diagram / Topology Generator — SSH into devices, collect facts & neighbors, build topology graphs, output Graphviz and Mermaid diagrams."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Ashraf"}]
+
+dependencies = [
+    "netmiko>=4.3,<5",
+    "graphviz>=0.20",
+    "rich>=13.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "ruff"]
+
+[project.scripts]
+ndg = "ndg.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ndg*"]

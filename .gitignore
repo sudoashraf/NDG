@@ -1,0 +1,25 @@
+# Byte-compiled / cached
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Outputs
+output/*
+
+# Credentials — never commit real inventories
+inventory.yaml
+
+# Distribution
+dist/
+build/
+*.egg-info/

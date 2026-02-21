@@ -1,0 +1,78 @@
+# ─── NDG — Sample Inventory ────────────────────────────────────────────────
+#
+# Copy this file to  inventory.yaml  and edit with your real device details.
+# Any field under "defaults" is inherited by all devices unless overridden.
+#
+# Supported device_type values (Netmiko types):
+#   cisco_ios, cisco_xe, cisco_nxos, arista_eos, paloalto_panos,
+#   juniper_junos, juniper, fortinet, fortinet_ssh,
+#   sonic_ssh, extreme_exos, extreme
+# ───────────────────────────────────────────────────────────────────────────
+
+defaults:
+  username: admin
+  password: Cisco123!
+  device_type: cisco_ios
+  port: 22
+  timeout: 30
+  # secret: enablepass   # uncomment if devices need enable password
+
+devices:
+  # ─── Core Router ──────────────────────────────────────────────────
+  - host: 10.0.0.1
+    hostname: core-rtr-01          # optional friendly name (for your reference)
+
+  # ─── Distribution Switches ────────────────────────────────────────
+  - host: 10.0.0.2
+    hostname: dist-sw-01
+    device_type: cisco_nxos
+    username: nxadmin
+    password: NxPass456!
+
+  - host: 10.0.0.3
+    hostname: dist-sw-02
+    device_type: cisco_nxos
+    username: nxadmin
+    password: NxPass456!
+
+  # ─── Access Switch (Arista) ──────────────────────────────────────
+  - host: 10.0.0.4
+    hostname: access-sw-01
+    device_type: arista_eos
+    username: arista
+    password: AristaPass!
+
+  # ─── Edge Firewall (Palo Alto) ──────────────────────────────────
+  - host: 10.0.0.5
+    hostname: edge-fw-01
+    device_type: paloalto_panos
+    username: panadmin
+    password: PanPass789!
+
+  # ─── Juniper Router ─────────────────────────────────────────────
+  - host: 10.0.0.6
+    hostname: border-rtr-01
+    device_type: juniper_junos
+    username: junadmin
+    password: JunPass123!
+
+  # ─── FortiGate Firewall ─────────────────────────────────────────
+  - host: 10.0.0.7
+    hostname: branch-fw-01
+    device_type: fortinet
+    username: fortiadmin
+    password: FortiPass456!
+
+  # ─── SONiC Switch ───────────────────────────────────────────────
+  - host: 10.0.0.8
+    hostname: spine-sw-01
+    device_type: sonic_ssh
+    username: admin
+    password: SonicPass789!
+
+  # ─── Extreme Networks Switch ────────────────────────────────────
+  - host: 10.0.0.9
+    hostname: campus-sw-01
+    device_type: extreme_exos
+    username: exadmin
+    password: ExPass123!
