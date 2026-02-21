@@ -15,6 +15,7 @@ env/
 
 # Outputs
 output/*
+!output/.gitkeep
 
 # Credentials — never commit real inventories
 inventory.yaml
